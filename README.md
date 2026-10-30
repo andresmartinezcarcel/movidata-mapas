@@ -1,7 +1,7 @@
 # movidata-mapas
 
 Mapas interactivos (exportados con qgis2web) de las métricas georreferenciadas de MOVIDATA.
-Se publican con GitHub Pages en `https://andresmartinezcarcel.github.io/movidata-mapas/`
+Se publican con GitHub Pages en `https://mapas.citmovucuenca.com/` (dominio propio: archivo `CNAME` + registro CNAME `mapas` → `andresmartinezcarcel.github.io` en el DNS de WordPress.com)
 y se enlazan desde las páginas de ejes de https://citmovucuenca.com/movidata/.
 
 ## Estructura
@@ -23,6 +23,6 @@ se ejecuta `npm run build:sp01`, se copia `publico/sp01/dist/` aquí y se vuelve
 3. Añade la métrica a la lista de `index.html` de la raíz.
 4. `git add . && git commit -m "Añade mapa <código>" && git push`
 5. En WordPress, en la página del eje, cambia el botón «Próximamente» de esa métrica por
-   «Ver mapa →» con enlace a `https://andresmartinezcarcel.github.io/movidata-mapas/<código>/`.
+   «Ver mapa →» con enlace a `https://mapas.citmovucuenca.com/<código>/`.
 
 Ojo: todo lo que se sube aquí es público. Publica solo datos agregados o ya autorizados por la EMOV.
