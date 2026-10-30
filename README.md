@@ -21,6 +21,10 @@ las personas).
 `sp05/` sale igual, de `frontend/publico/sp05/` (`npm run build:sp05`, sección «Mapa público de
 SP05»): son todos los siniestros reportados, con su gravedad y su ficha pública (mes y franja
 horaria, sin datos de las personas).
+`historico/salud-publica/` no es un mapa: es el bloque «Histórico» de la pestaña Salud pública
+del visor como página estática, de `frontend/publico/historico-salud-publica/` (`npm run
+build:publico -- historico-salud-publica`, ver su `README.md`). Lleva las series por año y por
+mes de 2019 a 2025, sin filtros y nunca por día; se enlaza con `?m=SP02&t=mes`.
 
 ## Publicar un mapa nuevo
 
