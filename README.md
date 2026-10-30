@@ -21,6 +21,9 @@ las personas).
 `sp05/` sale igual, de `frontend/publico/sp05/` (`npm run build:sp05`, sección «Mapa público de
 SP05»): son todos los siniestros reportados, con su gravedad y su ficha pública (mes y franja
 horaria, sin datos de las personas).
+`sp08/` sale igual, de `frontend/publico/sp08/` (`npm run build:publico -- sp08`, ver su
+`README.md`): son las acciones de fiscalización de tránsito (operativos cumplidos) agregadas por
+ubicación, sin direcciones escritas por los agentes, responsables ni observaciones.
 `historico/salud-publica/` no es un mapa: es el bloque «Histórico» de la pestaña Salud pública
 del visor como página estática, de `frontend/publico/historico-salud-publica/` (`npm run
 build:publico -- historico-salud-publica`, ver su `README.md`). Lleva las series por año y por
