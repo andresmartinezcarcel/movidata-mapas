@@ -18,6 +18,9 @@ las personas).
 `sp04/` sale igual, de `frontend/publico/sp04/` (`npm run build:sp04`, sección «Mapa público de
 SP04»): son los siniestros con lesionados con su ficha pública (mes y franja horaria, sin datos de
 las personas).
+`sp05/` sale igual, de `frontend/publico/sp05/` (`npm run build:sp05`, sección «Mapa público de
+SP05»): son todos los siniestros reportados, con su gravedad y su ficha pública (mes y franja
+horaria, sin datos de las personas).
 
 ## Publicar un mapa nuevo
 
