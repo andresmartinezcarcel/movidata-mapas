@@ -12,6 +12,9 @@ Excepción: `sp01/` no sale de qgis2web. Es la capa «Tasa de mortalidad» del v
 compilada como página estática desde el repositorio `movidata` (`frontend/publico/sp01/`, ver la
 sección «Mapa público de SP01» de `frontend/README.md`): para actualizarla, se regeneran los datos,
 se ejecuta `npm run build:sp01`, se copia `publico/sp01/dist/` aquí y se vuelve a añadir el botón.
+`sp02/` sale igual, de `frontend/publico/sp02/` (`npm run build:sp02`, sección «Mapa público de
+SP02»): son los siniestros con fallecidos con su ficha pública (mes y franja horaria, sin datos de
+las personas).
 `sp04/` sale igual, de `frontend/publico/sp04/` (`npm run build:sp04`, sección «Mapa público de
 SP04»): son los siniestros con lesionados con su ficha pública (mes y franja horaria, sin datos de
 las personas).
