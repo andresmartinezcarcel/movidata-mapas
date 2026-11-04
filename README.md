@@ -31,6 +31,16 @@ datos, se compila y se copia el resultado (ver «Publicar o actualizar una pági
   `frontend/publico/historico-cambio-climatico/` y `frontend/publico/historico-equidad/`: CC02 por
   año, mes y día, CC03 y CC08 por año (`?m=CC03&t=anio`), y EP03–EP06 solo por año (`?m=EP03`).
 
+## Ojo: dos numeraciones de métricas
+
+Las tarjetas de las páginas de ejes de WordPress usan el **Nº oficial** de la lámina (del 1 al 9
+por eje). Este repo usa el **código de plataforma** del visor: en las carpetas, en el `?m=` de los
+históricos y en `historico.json`. En Salud pública coinciden, pero en Cambio climático y Equidad
+no. Por ejemplo, la tarjeta CC07 (bicicletas públicas) enlaza a `?m=CC08`, y la tarjeta EP07
+(asequibilidad) a `?m=EP06`. Antes de enlazar una tarjeta, búscala siempre por el título de la
+métrica. La tabla completa está en [`CLAUDE.md`](CLAUDE.md), copiada de `docs/metricas/README.md`
+del repositorio `movidata`.
+
 ## Publicar o actualizar una página
 
 1. Desde `frontend/` del repositorio `movidata`, con la pila levantada, regenera los datos
@@ -46,6 +56,8 @@ datos, se compila y se copia el resultado (ver «Publicar o actualizar una pági
    este README.
 5. `git add <carpeta> index.html README.md && git commit -m "Añade el mapa público de <CÓDIGO> (<métrica>)" && git push`
 6. Si es nueva, en WordPress, en la página del eje, cambia el botón «Próximamente» de esa métrica
-   por «Ver mapa →» con enlace a `https://mapas.citmovucuenca.com/<código>/`.
+   por «Ver mapa →» con enlace a `https://mapas.citmovucuenca.com/<código>/`. Busca la tarjeta por
+   el título de la métrica, porque su código puede no coincidir con el de la carpeta (ver «Ojo: dos
+   numeraciones de métricas»).
 
 Ojo: todo lo que se sube aquí es público. Publica solo datos agregados o ya autorizados por la EMOV.
