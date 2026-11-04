@@ -16,6 +16,9 @@ datos, se compila y se copia el resultado (ver «Publicar o actualizar una pági
   público de SP01» de `frontend/README.md`): cifras agregadas por territorio.
 - `sp02/`: los siniestros con fallecidos con su ficha pública (mes y franja horaria, sin datos de
   las personas), de `frontend/publico/sp02/` (sección «Mapa público de SP02»).
+- `sp03/`: la capa «Fallecidos en movilidad activa por parroquia» del visor: la proporción de
+  peatones y ciclistas entre los fallecidos de cada parroquia, por año o de 2019 a 2025
+  (solo recuentos por parroquia), de `frontend/publico/sp03/` (ver su `README.md`).
 - `sp04/`: los siniestros con lesionados con su ficha pública (mes y franja horaria, sin datos de
   las personas), de `frontend/publico/sp04/` (sección «Mapa público de SP04»).
 - `sp05/`: todos los siniestros reportados, con su gravedad y su ficha pública (mes y franja
