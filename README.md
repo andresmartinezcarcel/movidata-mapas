@@ -1,48 +1,51 @@
 # movidata-mapas
 
-Mapas interactivos (exportados con qgis2web) de las métricas georreferenciadas de MOVIDATA.
+Mapas interactivos e históricos de las métricas de MOVIDATA, como páginas estáticas.
 Se publican con GitHub Pages en `https://mapas.citmovucuenca.com/` (dominio propio: archivo `CNAME` + registro CNAME `mapas` → `andresmartinezcarcel.github.io` en el DNS de WordPress.com)
 y se enlazan desde las páginas de ejes de https://citmovucuenca.com/movidata/.
 
 ## Estructura
 
 Una carpeta por métrica, con el código en minúsculas: `sp01/`, `cc02/`, `ep04/`…
-Cada carpeta contiene el `index.html` que genera qgis2web (más sus carpetas `css/`, `js/`, `data/`, …).
-Excepción: `sp01/` no sale de qgis2web. Es la capa «Tasa de mortalidad» del visor de MOVIDATA
-compilada como página estática desde el repositorio `movidata` (`frontend/publico/sp01/`, ver la
-sección «Mapa público de SP01» de `frontend/README.md`): para actualizarla, se regeneran los datos,
-se ejecuta `npm run build:sp01`, se copia `publico/sp01/dist/` aquí y se vuelve a añadir el botón.
-`sp02/` sale igual, de `frontend/publico/sp02/` (`npm run build:sp02`, sección «Mapa público de
-SP02»): son los siniestros con fallecidos con su ficha pública (mes y franja horaria, sin datos de
-las personas).
-`sp04/` sale igual, de `frontend/publico/sp04/` (`npm run build:sp04`, sección «Mapa público de
-SP04»): son los siniestros con lesionados con su ficha pública (mes y franja horaria, sin datos de
-las personas).
-`sp05/` sale igual, de `frontend/publico/sp05/` (`npm run build:sp05`, sección «Mapa público de
-SP05»): son todos los siniestros reportados, con su gravedad y su ficha pública (mes y franja
-horaria, sin datos de las personas).
-`sp08/` sale igual, de `frontend/publico/sp08/` (`npm run build:publico -- sp08`, ver su
-`README.md`): son las acciones de fiscalización de tránsito (operativos cumplidos) agregadas por
-ubicación, sin direcciones escritas por los agentes, responsables ni observaciones.
-`historico/salud-publica/` no es un mapa: es el bloque «Histórico» de la pestaña Salud pública
-del visor como página estática, de `frontend/publico/historico-salud-publica/` (`npm run
-build:publico -- historico-salud-publica`, ver su `README.md`). Lleva las series por año y por
-mes de 2019 a 2025, sin filtros y nunca por día; se enlaza con `?m=SP02&t=mes`.
-`historico/cambio-climatico/` e `historico/equidad/` son lo mismo para los otros dos ejes, de
-`frontend/publico/historico-cambio-climatico/` y `frontend/publico/historico-equidad/` (`npm run
-build:publico -- historico-cambio-climatico`, `… -- historico-equidad`): CC02 por año, mes y día,
-CC03 y CC08 por año (`?m=CC03&t=anio`), y EP03–EP06 solo por año (`?m=EP03`).
+Cada carpeta es el `dist/` de una página Vite del repositorio `movidata`
+(`frontend/publico/<código>/`), que reutiliza los módulos del visor y lee datos precalculados de
+su carpeta `data/` en vez de la API. No se editan aquí: se cambia la fuente, se regeneran los
+datos, se compila y se copia el resultado (ver «Publicar o actualizar una página»).
 
-## Publicar un mapa nuevo
+- `sp01/`: la capa «Tasa de mortalidad» del visor (`frontend/publico/sp01/`, sección «Mapa
+  público de SP01» de `frontend/README.md`): cifras agregadas por territorio.
+- `sp02/`: los siniestros con fallecidos con su ficha pública (mes y franja horaria, sin datos de
+  las personas), de `frontend/publico/sp02/` (sección «Mapa público de SP02»).
+- `sp04/`: los siniestros con lesionados con su ficha pública (mes y franja horaria, sin datos de
+  las personas), de `frontend/publico/sp04/` (sección «Mapa público de SP04»).
+- `sp05/`: todos los siniestros reportados, con su gravedad y su ficha pública (mes y franja
+  horaria, sin datos de las personas), de `frontend/publico/sp05/` (sección «Mapa público de
+  SP05»).
+- `sp08/`: las acciones de fiscalización de tránsito (operativos cumplidos) agregadas por
+  ubicación, sin direcciones escritas por los agentes, responsables ni observaciones, de
+  `frontend/publico/sp08/` (ver su `README.md`).
+- `historico/salud-publica/` no es un mapa: es el bloque «Histórico» de la pestaña Salud pública
+  del visor, de `frontend/publico/historico-salud-publica/` (ver su `README.md`). Lleva las series
+  por año y por mes de 2019 a 2025, sin filtros y nunca por día; se enlaza con `?m=SP02&t=mes`.
+- `historico/cambio-climatico/` e `historico/equidad/` son lo mismo para los otros dos ejes, de
+  `frontend/publico/historico-cambio-climatico/` y `frontend/publico/historico-equidad/`: CC02 por
+  año, mes y día, CC03 y CC08 por año (`?m=CC03&t=anio`), y EP03–EP06 solo por año (`?m=EP03`).
 
-1. En QGIS: Web → qgis2web → Leaflet. En *Export* elige como carpeta `movidata-mapas/<código>/`
-   (qgis2web crea una subcarpeta `qgis2web_fecha`: mueve su contenido a `<código>/`).
-   Recomendado: en *Data export* reduce la precisión de coordenadas (p. ej. 5–6 decimales) y
-   activa *Minify GeoJSON*; exporta solo las capas y atributos que se van a mostrar.
-2. Añade el botón de volver: `python herramientas/anadir_volver.py <código>/index.html <eje>`
-3. Añade la métrica a la lista de `index.html` de la raíz.
-4. `git add . && git commit -m "Añade mapa <código>" && git push`
-5. En WordPress, en la página del eje, cambia el botón «Próximamente» de esa métrica por
-   «Ver mapa →» con enlace a `https://mapas.citmovucuenca.com/<código>/`.
+## Publicar o actualizar una página
+
+1. Desde `frontend/` del repositorio `movidata`, con la pila levantada, regenera los datos
+   (`python scripts/generar-<código>-publico.py --api http://127.0.0.1 --desde 2019 --hasta 2025`,
+   si la página tiene script) y compila: `npm run build:publico -- <carpeta de publico/>`
+   (p. ej. `sp08`, `historico-equidad`).
+2. Borra la carpeta de aquí, si ya existía, y copia en su lugar `frontend/publico/<…>/dist/`. Los
+   nombres de los assets cambian en cada compilación y los viejos quedarían colgando.
+3. Añade el botón de volver (la compilación lo pierde):
+   `python herramientas/anadir_volver.py <carpeta>/index.html <eje>`, con el eje según el prefijo:
+   `sp` → `salud-publica`, `cc` → `cambio-climatico`, `ep` → `equidad`.
+4. Si la página es nueva, añádela a la lista de `index.html` de la raíz y a la «Estructura» de
+   este README.
+5. `git add <carpeta> index.html README.md && git commit -m "Añade el mapa público de <CÓDIGO> (<métrica>)" && git push`
+6. Si es nueva, en WordPress, en la página del eje, cambia el botón «Próximamente» de esa métrica
+   por «Ver mapa →» con enlace a `https://mapas.citmovucuenca.com/<código>/`.
 
 Ojo: todo lo que se sube aquí es público. Publica solo datos agregados o ya autorizados por la EMOV.
