@@ -14,7 +14,7 @@ Every folder here is **build output**. The source lives in the sibling repo `C:\
 
 - `sp01/`, `sp02/`, `sp04/`, `sp05/`, `sp08/`: Vite + React + MapLibre maps that reuse the main viewer's `src/` modules. Each reads its precomputed `data/*.json|geojson` instead of calling the API.
 - `historico/salud-publica/`, `historico/cambio-climatico/`, `historico/equidad/`: each axis's "Histórico" block as a static page (`data/historico.json`). They take query params for the metric and granularity, such as `?m=SP02&t=mes` or `?m=CC03&t=anio`.
-- The `movidata` repo has two skills for this flow: `crear-mapa-publico` covers the source side and `publicar-mapa-publico` covers publishing here.
+- The `movidata` repo has three skills for this flow: `crear-mapa-publico` covers the source side, `publicar-mapa-publico` covers publishing here and `publicar-mapa-wordpress` links a new map from its WordPress axis page.
 
 Updating a page, run from `C:\movidata\frontend` with the stack running:
 
@@ -31,7 +31,7 @@ Then here:
 2. Re-add the back button, because the build overwrites `index.html`:
    `python herramientas/anadir_volver.py <folder>/index.html <eje>`, where `<eje>` is `salud-publica`, `cambio-climatico` or `equidad`. The script is idempotent: it checks for the `<!-- movidata-volver -->` marker.
 3. For a new page, add a card to the root `index.html` list (maps under the first `<ul>`, histories under "Históricos").
-4. After the site is live, the WordPress axis page's «Próximamente» button for that metric gets switched to «Ver mapa →» `https://mapas.citmovucuenca.com/<código>/`. This happens outside the repo. Find the card **by its metric title**, not by its code (see the next section).
+4. After the site is live, switch the WordPress axis page's «Próximamente» button for that metric to «Ver mapa →» `https://mapas.citmovucuenca.com/<código>/`. It happens outside the repo, through Claude in Chrome: follow the `publicar-mapa-wordpress` skill in `C:\movidata\.claude\skills\`. Find the card **by its metric title**, not by its code (see the next section).
 
 Folder names are the lowercase **platform** metric code (`sp01`, `cc02`, `ep04`…).
 
