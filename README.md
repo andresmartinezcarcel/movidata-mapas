@@ -28,6 +28,10 @@ ubicación, sin direcciones escritas por los agentes, responsables ni observacio
 del visor como página estática, de `frontend/publico/historico-salud-publica/` (`npm run
 build:publico -- historico-salud-publica`, ver su `README.md`). Lleva las series por año y por
 mes de 2019 a 2025, sin filtros y nunca por día; se enlaza con `?m=SP02&t=mes`.
+`historico/cambio-climatico/` e `historico/equidad/` son lo mismo para los otros dos ejes, de
+`frontend/publico/historico-cambio-climatico/` y `frontend/publico/historico-equidad/` (`npm run
+build:publico -- historico-cambio-climatico`, `… -- historico-equidad`): CC02 por año, mes y día,
+CC03 y CC08 por año (`?m=CC03&t=anio`), y EP03–EP06 solo por año (`?m=EP03`).
 
 ## Publicar un mapa nuevo
 
