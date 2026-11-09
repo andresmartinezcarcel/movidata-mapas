@@ -31,6 +31,9 @@ datos, se compila y se copia el resultado (ver «Publicar o actualizar una pági
   por km de vía de cada parroquia, los árboles del inventario de la EMAC como puntos y su mapa de
   calor, con filtros de área, parroquia y calle; de `frontend/publico/cc07/` (ver su `README.md`).
   Solo es un inventario de árboles: ningún dato de personas.
+- `ep02/`: «Red vial con aceras», la tarjeta EP01 de WordPress: el % de la red vial levantada
+  con aceras por parroquia (solo la cabecera en las rurales) y cada tramo con su código de acera
+  (`frontend/publico/ep02/`).
 - `historico/salud-publica/` no es un mapa: es el bloque «Histórico» de la pestaña Salud pública
   del visor, de `frontend/publico/historico-salud-publica/` (ver su `README.md`). Lleva las series
   por año y por mes de 2019 a 2025, sin filtros y nunca por día; se enlaza con `?m=SP02&t=mes`.
