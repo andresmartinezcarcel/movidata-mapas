@@ -27,6 +27,10 @@ datos, se compila y se copia el resultado (ver «Publicar o actualizar una pági
 - `sp08/`: las acciones de fiscalización de tránsito (operativos cumplidos) agregadas por
   ubicación, sin direcciones escritas por los agentes, responsables ni observaciones, de
   `frontend/publico/sp08/` (ver su `README.md`).
+- `cc07/`: «Árboles por kilómetro», la tarjeta CC06 de WordPress (arbolado en vías): los árboles
+  por km de vía de cada parroquia, los árboles del inventario de la EMAC como puntos y su mapa de
+  calor, con filtros de área, parroquia y calle; de `frontend/publico/cc07/` (ver su `README.md`).
+  Solo es un inventario de árboles: ningún dato de personas.
 - `historico/salud-publica/` no es un mapa: es el bloque «Histórico» de la pestaña Salud pública
   del visor, de `frontend/publico/historico-salud-publica/` (ver su `README.md`). Lleva las series
   por año y por mes de 2019 a 2025, sin filtros y nunca por día; se enlaza con `?m=SP02&t=mes`.
