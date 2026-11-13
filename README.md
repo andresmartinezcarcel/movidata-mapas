@@ -34,6 +34,10 @@ datos, se compila y se copia el resultado (ver «Publicar o actualizar una pági
 - `ep02/`: «Red vial con aceras», la tarjeta EP01 de WordPress: el % de la red vial levantada
   con aceras por parroquia (solo la cabecera en las rurales) y cada tramo con su código de acera
   (`frontend/publico/ep02/`).
+- `ep07/`: «Corredores con carril preferencial», la tarjeta EP06 de WordPress: el % de la red
+  de transporte público colectivo urbana (corredores de bus y tranvía) con carril preferencial, por
+  parroquia urbana, y la red con sus carriles de bus y el tranvía (`frontend/publico/ep07/`).
+  Son capas de transporte público: ningún dato de personas.
 - `historico/salud-publica/` no es un mapa: es el bloque «Histórico» de la pestaña Salud pública
   del visor, de `frontend/publico/historico-salud-publica/` (ver su `README.md`). Lleva las series
   por año y por mes de 2019 a 2025, sin filtros y nunca por día; se enlaza con `?m=SP02&t=mes`.
