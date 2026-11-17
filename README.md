@@ -24,6 +24,10 @@ datos, se compila y se copia el resultado (ver «Publicar o actualizar una pági
 - `sp05/`: todos los siniestros reportados, con su gravedad y su ficha pública (mes y franja
   horaria, sin datos de las personas), de `frontend/publico/sp05/` (sección «Mapa público de
   SP05»).
+- `sp06/`: la capa «Intersecciones conflictivas» del visor: las intersecciones urbanas que cumplen
+  la regla de punto negro de la ANT en cada año natural, con su círculo de 100 m coloreado por P,
+  con o sin incidentes, de `frontend/publico/sp06/` (ver su `README.md`). Solo intersecciones de
+  la red vial con recuentos agregados: ningún siniestro ni persona.
 - `sp08/`: las acciones de fiscalización de tránsito (operativos cumplidos) agregadas por
   ubicación, sin direcciones escritas por los agentes, responsables ni observaciones, de
   `frontend/publico/sp08/` (ver su `README.md`).
