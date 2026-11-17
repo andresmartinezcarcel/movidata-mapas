@@ -31,6 +31,11 @@ datos, se compila y se copia el resultado (ver «Publicar o actualizar una pági
   por km de vía de cada parroquia, los árboles del inventario de la EMAC como puntos y su mapa de
   calor, con filtros de área, parroquia y calle; de `frontend/publico/cc07/` (ver su `README.md`).
   Solo es un inventario de árboles: ningún dato de personas.
+- `ep01/`: «Cobertura del transporte público», la tarjeta EP05 de WordPress: el % de las
+  viviendas (medidores eléctricos residenciales de CENTROSUR, 2018) con una línea de bus o el
+  tranvía a menos de 250 m dentro del límite urbano y de 500 m fuera, por parroquia, con las
+  líneas de bus urbano, rural y el tranvía encima y filtros de área, parroquia y modo
+  (`frontend/publico/ep01/`). Solo recuentos de viviendas por parroquia: ningún medidor.
 - `ep02/`: «Red vial con aceras», la tarjeta EP01 de WordPress: el % de la red vial levantada
   con aceras por parroquia (solo la cabecera en las rurales) y cada tramo con su código de acera
   (`frontend/publico/ep02/`).
