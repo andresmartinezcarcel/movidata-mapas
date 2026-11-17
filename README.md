@@ -34,6 +34,10 @@ datos, se compila y se copia el resultado (ver «Publicar o actualizar una pági
 - `ep02/`: «Red vial con aceras», la tarjeta EP01 de WordPress: el % de la red vial levantada
   con aceras por parroquia (solo la cabecera en las rurales) y cada tramo con su código de acera
   (`frontend/publico/ep02/`).
+- `ep03/`: «Longitud de infraestructura ciclista», la tarjeta EP03 de WordPress: los km de
+  infraestructura ciclista de cada parroquia urbana y sus tramos por tipo, con filtros de año,
+  tipo, normativa y parroquia (`frontend/publico/ep03/`). Es el inventario municipal de
+  infraestructura ciclista: ningún dato de personas.
 - `ep07/`: «Corredores con carril preferencial», la tarjeta EP06 de WordPress: el % de la red
   de transporte público colectivo urbana (corredores de bus y tranvía) con carril preferencial, por
   parroquia urbana, y la red con sus carriles de bus y el tranvía (`frontend/publico/ep07/`).
